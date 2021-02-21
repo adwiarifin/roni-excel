@@ -52,25 +52,6 @@
     <script src="{{ asset('js/datatables.bootstrap.js') }}"></script>
     {{-- <script src="https://datatables.yajrabox.com/js/handlebars.js"></script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.0.0/jquery.mark.min.js"></script>
-    <script>
-        $(function() {
-            var $input = $("input[name='keyword']"),
-                $context = $(".keyword");
-            $input.on("input", function() {
-                var term = $(this).val();
-                $context.show().unmark();
-                if (term) {
-                    $context.mark(term, {
-                        done: function() {
-                            $context.not(":has(mark)").hide();
-                        }
-                    });
-                }
-            });
-            $('#search-filter').focus();
-        });
-
-    </script>
     <script type="text/javascript">
         $(function() {
             $('#something-table').DataTable({
@@ -78,15 +59,15 @@
                 serverSide: true,
                 ajax: '{{ route('table.data') }}',
                 columns: [
-                    {data: 'id'},
-                    {data: 'level1'},
-                    {data: 'level2'},
-                    {data: 'level3'},
-                    {data: 'level4'},
-                    {data: 'kecamatan'},
-                    {data: 'satuan'},
-                    {data: 'value'},
-                    {data: 'produsen'}
+                    { data: 'id' },
+                    { data: 'level1' },
+                    { data: 'level2' },
+                    { data: 'level3' },
+                    { data: 'level4' },
+                    { data: 'kecamatan' },
+                    { data: 'satuan' },
+                    { data: 'value' },
+                    { data: 'produsen' }
                 ]
             });
         });
